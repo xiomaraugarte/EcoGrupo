@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+/*import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { colors } from '../constants/colors';
 
 export default function RegisterForm() {
@@ -28,6 +28,63 @@ export default function RegisterForm() {
             <TouchableOpacity style={styles.forgotPasswordButton} activeOpacity={0.7}>
                 <Text style={styles.forgotPasswordText}>¿Olvidaste tu contraseña?</Text>
             </TouchableOpacity>
+        </View>
+    );
+}*/
+
+import { useState } from 'react';
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { colors } from '../constants/colors';
+
+export default function RegisterForm() {
+    const [correo, setCorreo] = useState('');
+    const [contrasena, setContrasena] = useState('');
+
+    const CORREO_CORRECTO = 'usuario@gmail.com';
+    const CONTRASENA_CORRECTA = '12345678';
+
+    const verificarAcceso = () => {
+        if (
+            correo.trim().toLowerCase() === CORREO_CORRECTO &&
+            contrasena === CONTRASENA_CORRECTA
+        ) {
+            Alert.alert('Éxito', 'Datos correctos');
+        } else {
+            Alert.alert('Error', 'Correo o contraseña incorrectos');
+        }
+    };
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.inputGroup}>
+                <Text style={styles.label}>Correo Electrónico</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="ejemplo@gmail.com"
+                    placeholderTextColor={colors.textMuted}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    value={correo}
+                    onChangeText={setCorreo}
+                />
+            </View>
+
+            <View style={styles.inputGroup}>
+                <Text style={styles.label}>Contraseña</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="****************"
+                    placeholderTextColor={colors.textMuted}
+                    secureTextEntry
+                    value={contrasena}
+                    onChangeText={setContrasena}
+                />
+            </View>
+
+            <TouchableOpacity style={styles.forgotPasswordButton} activeOpacity={0.7}>
+                <Text style={styles.forgotPasswordText}>¿Olvidaste tu contraseña?</Text>
+            </TouchableOpacity>
+            
         </View>
     );
 }
