@@ -1,18 +1,16 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { theme } from '../constants/theme';
+import { colors } from '../constants/colors';
+import Register from "./register";
 
 export default function Index() {
   return (
     <SafeAreaView style={styles.screen}>
-      <View style={styles.content}>
-        {/* COMPONENTS: add each one right above this line */}
-      </View>
+     <Register /> 
     </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: theme.colors.background },
-  content: { flex: 1, padding: theme.spacing.xl, gap: theme.spacing.lg },
+  screen: { flex: 1, backgroundColor: colors.background },
+  content: { flex: 1, padding: 20, gap: 16 },
 });
