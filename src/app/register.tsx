@@ -11,7 +11,7 @@ export default function Register() {
     const [correo, setCorreo] = useState('');
     const [contrasena, setContrasena] = useState('');
 
-    const CORREO_CORRECTO = 'usuario@gmail.com';
+    const CORREO_CORRECTO = 'xiomarocastro@gmail.com';
     const CONTRASENA_CORRECTA = '12345678';
 
     const verificarAcceso = () => {
