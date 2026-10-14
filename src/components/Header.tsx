@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     header: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 100,
-        paddingBottom: 90,
+        paddingTop: 50,
+        paddingBottom: 50,
         paddingHorizontal: 20,
     },
     greeting: {

@@ -1,9 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { colors } from '../constants/colors';
 
-export default function Buttonsec() {
+type ButtonsecProps = {
+    onPress: () => void;
+};
+
+export default function Buttonsec({ onPress }: ButtonsecProps) {
     return (
-        <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+        <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={onPress}>
             <Text style={styles.buttonText}>Iniciar Sesión</Text>
         </TouchableOpacity>
         

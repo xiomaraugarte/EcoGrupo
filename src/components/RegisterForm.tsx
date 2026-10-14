@@ -32,28 +32,22 @@ export default function RegisterForm() {
     );
 }*/
 
-import { useState } from 'react';
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { colors } from '../constants/colors';
 
-export default function RegisterForm() {
-    const [correo, setCorreo] = useState('');
-    const [contrasena, setContrasena] = useState('');
+type RegisterFormProps = {
+    correo: string;
+    setCorreo: (value: string) => void;
+    contrasena: string;
+    setContrasena: (value: string) => void;
+};
 
-    const CORREO_CORRECTO = 'usuario@gmail.com';
-    const CONTRASENA_CORRECTA = '12345678';
-
-    const verificarAcceso = () => {
-        if (
-            correo.trim().toLowerCase() === CORREO_CORRECTO &&
-            contrasena === CONTRASENA_CORRECTA
-        ) {
-            Alert.alert('Éxito', 'Datos correctos');
-        } else {
-            Alert.alert('Error', 'Correo o contraseña incorrectos');
-        }
-    };
-
+export default function RegisterForm({
+    correo,
+    setCorreo,
+    contrasena,
+    setContrasena,
+}: RegisterFormProps) {
     return (
         <View style={styles.container}>
             <View style={styles.inputGroup}>
