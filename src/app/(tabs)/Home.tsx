@@ -6,7 +6,7 @@ import HomeRankingCard from '@/components/HomeRankingCard';
 import HomeRecyclingCard from '@/components/HomeRecyclingCard';
 import HomeUserSummary from '@/components/HomeUserSummary';
 import { StyleSheet, View } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../constants/theme';
 
 export default function Home() {
     return (
