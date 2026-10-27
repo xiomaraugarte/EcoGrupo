@@ -1,5 +1,5 @@
 
-import { MaterialIcons } from '@expo/vector-icons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeProductCard() {
